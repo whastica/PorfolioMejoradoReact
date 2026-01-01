@@ -23,7 +23,7 @@ export const projects = [
     ],
     demoUrl: 'https://github.com/whastica/whatchdog',
     repoUrl: 'https://github.com/whastica/whatchdog',
-    youtubeUrl: '',
+    youtubeUrl: 'https://www.youtube.com/watch?v=taskmanager',
     status: 'Próximamente'
   },
   {
@@ -50,7 +50,7 @@ export const projects = [
     ],
     demoUrl: 'https://github.com/whastica/backendMarket',
     repoUrl: 'https://github.com/whastica/backendMarket',
-    youtubeUrl: '',
+    youtubeUrl: 'https://www.youtube.com/watch?v=taskmanager',
     status: 'Próximamente'
   },
   {
@@ -77,7 +77,7 @@ export const projects = [
     ],
     demoUrl: 'https://github.com/whastica/BackPizzeriaSecurity',
     repoUrl: 'https://github.com/whastica/BackPizzeriaSecurity',
-    youtubeUrl: '',
+    youtubeUrl: 'https://www.youtube.com/watch?v=taskmanager',
     status: 'Próximamente'
   },
   {
