@@ -196,7 +196,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   className="flex-1 flex items-center justify-center space-x-2 border-2 border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-red-500 px-6 py-3 rounded-lg font-medium transition-colors duration-200"
                 >
                   <Youtube size={18} />
-                  <span>Ver Video</span>
+                  <span>Ver Video Preview</span>
                 </button>
               )}
             </div>

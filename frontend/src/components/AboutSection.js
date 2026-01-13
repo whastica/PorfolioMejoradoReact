@@ -47,27 +47,23 @@ const AboutSection = () => {
               <ul className="space-y-4 text-muted-foreground">
                 <li className="flex items-start space-x-3">
                   <span className="text-primary mt-1">▪</span>
-                  <span>Desarrollo de aplicaciones web escalables y mantenibles</span>
+                  <span>Desarrollo de aplicaciones web escalables, mantenibles y bien estructuradas</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <span className="text-primary mt-1">▪</span>
-                  <span>Implementación de arquitecturas limpias y patrones de diseño</span>
+                  <span>Diseño de soluciones centradas en el usuario y alineadas con objetivos de negocio</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <span className="text-primary mt-1">▪</span>
-                  <span>Soluciones centradas en la experiencia del usuario</span>
+                  <span>Aplicación de buenas prácticas de ingeniería y arquitectura de software</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <span className="text-primary mt-1">▪</span>
-                  <span>Aprendizaje continuo de nuevas tecnologías</span>
+                  <span>Optimización de rendimiento, experiencia de usuario y calidad del código</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <span className="text-primary mt-1">▪</span>
-                  <span>Colaboración efectiva en equipos multidisciplinarios</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <span className="text-primary mt-1">▪</span>
-                  <span>Enfoque en la optimización y rendimiento de aplicaciones</span>
+                  <span>Aprendizaje continuo y adopción estratégica de nuevas tecnologías</span>
                 </li>
               </ul>
             </div>

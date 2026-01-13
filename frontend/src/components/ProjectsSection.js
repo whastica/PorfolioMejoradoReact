@@ -132,7 +132,7 @@ const ProjectsSection = () => {
             <div className="text-muted-foreground text-sm">Tecnologías utilizadas</div>
           </div>
           <div className="text-center p-6 glass-effect rounded-xl">
-            <div className="text-3xl font-bold text-primary mb-2">3+</div>
+            <div className="text-3xl font-bold text-primary mb-2">1.5+</div>
             <div className="text-muted-foreground text-sm">Años de experiencia</div>
           </div>
         </div>

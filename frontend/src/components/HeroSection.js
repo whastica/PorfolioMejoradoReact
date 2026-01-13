@@ -23,18 +23,17 @@ const HeroSection = () => {
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
           ¡Hola! Soy{' '}
           <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
-            Stiven Caicedo
+            Whalen Caicedo
           </span>
         </h1>
 
         <h2 className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-6 font-medium">
-          Desarrollador Web Full Stack
+          Ingeniero en Sistemas Full Stack
         </h2>
 
         <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Desarrollador Web con experiencia en <span className="text-primary font-semibold">frontend y backend</span> apasionado por crear 
-          aplicaciones web intuitivas y funcionales. Con una sólida formación en Ingeniería de Sistemas, 
-          estoy preparado para contribuir con soluciones innovadoras y centradas en el usuario.
+          Ingeniero de Sistemas <span className="text-primary font-semibold"> Fullstack</span>  especializado en el desarrollo de aplicaciones web modernas, escalables y orientadas al usuario. 
+          Combino <span className="text-primary font-semibold">frontend y backend</span> para construir soluciones sólidas, bien estructuradas y alineadas con objetivos de negocio.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

@@ -1,141 +1,87 @@
 export const projects = [
   {
     id: '1',
-    name: 'Watchdog',
-    shortDescription: 'Plataforma ciudadana para reportar problemas urbanos en Popayán como baches, fallos en alumbrado público y acumulación de basura.',
-    fullDescription: 'Watchdog es una aplicación web completa diseñada para conectar a los ciudadanos de Popayán con las autoridades municipales. Los usuarios pueden reportar problemas urbanos mediante geolocalización precisa, subir imágenes como evidencia y hacer seguimiento al estado de sus reportes. El sistema incluye un panel de administración municipal para gestionar y dar seguimiento a todos los reportes ciudadanos.',
-    image: 'https://portfoliowhalensoft.netlify.app/Images/watchdog.webp',
-    technologies: ['Spring Boot', 'Spring Security', 'JPA', 'MongoDB', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+    name: 'ZeroXP',
+    shortDescription: 'Portal de empleos exclusivo para personas del sector tech sin experiencia laboral previa, donde empresas publican ofertas verificadas y candidatos aplican con un solo clic y de manera breve.',
+    fullDescription: 'ZeroXP es una plataforma que resuelve el problema de los recién graduados en tecnología que aplican a ofertas "junior" pero que requieren años de experiencia. La plataforma conecta empresas que verdaderamente buscan talento sin experiencia con candidatos junior, ofreciendo un sistema transparente de aplicaciones con seguimiento en tiempo real. Las empresas reciben candidatos pre-filtrados y los candidatos obtienen feedback claro sobre el estado de sus aplicaciones.',
+    image: '/images/ZeroXP.webp', // Cambiar por tu imagen
+    technologies: ['Spring Boot', 'Spring Security', 'JPA', 'MySQL', 'React', 'JS', 'Tailwind CSS', 'JWT'],
     features: [
-      'Geolocalización precisa para ubicar problemas',
-      'Sistema de carga y gestión de imágenes',
-      'Panel de administración municipal completo',
-      'Seguimiento en tiempo real del estado de reportes',
-      'Autenticación y autorización de usuarios',
-      'API REST para integración con otras plataformas'
+      'Autenticación JWT con roles diferenciados (Candidato y Empresa)',
+      'Sistema de publicación y gestión de ofertas laborales',
+      'Aplicaciones con un solo clic y carga de CV en PDF',
+      'Dashboard para empresas con visualización de aplicaciones',
+      'Panel de candidatos para seguimiento de postulaciones',
+      'Notificaciones por email sobre cambios de estado'
     ],
-    architecture: 'Arquitectura de microservicios con enfoque hexagonal, implementando Domain Driven Design (DDD) y CQRS para separación de responsabilidades y escalabilidad.',
+    architecture: 'Arquitectura Hexágonal con API REST para comunicación frontend-backend. Spring Boot en el backend con JPA para persistencia en MySQL. Frontend en React con JavaScript y gestión de estado mediante Context API. Autenticación con JWT y Spring Security.',
     challenges: [
-      'Implementación de microservicios con comunicación asíncrona',
-      'Gestión eficiente de archivos multimedia',
-      'Sistema de geolocalización precisa',
-      'Optimización de consultas en base de datos distribuida'
+      'Diseño de sistema de roles y permisos que permita funcionalidades diferenciadas por tipo de usuario',
+      'Publicacion y aplicacion de ofertas',
+      'Optimización de queries para filtrado de ofertas',
+      'Gestión de estados de aplicación con workflow claro (Pendiente → Revisado → Rechazado/Contratado)'
     ],
-    demoUrl: 'https://github.com/whastica/whatchdog',
-    repoUrl: 'https://github.com/whastica/whatchdog',
-    youtubeUrl: 'https://www.youtube.com/watch?v=taskmanager',
-    status: 'Próximamente'
+    demoUrl: 'https://github.com/whastica/ZeroXP', // Cambiar por tu URL cuando esté desplegado
+    repoUrl: 'https://github.com/whastica/ZeroXP',
+    youtubeUrl: 'https://www.youtube.com',
+    status: 'En desarrollo' // Cambiar a 'Completo' cuando esté desplegado
   },
   {
     id: '2',
-    name: 'Sistema de Gestión Supermarket',
-    shortDescription: 'Plataforma completa para administrar supermercados, con gestión de productos, órdenes, compras y control detallado de inventario en tiempo real.',
-    fullDescription: 'Sistema integral de gestión para supermercados que automatiza todos los procesos operativos. Incluye módulos para gestión de inventarios, procesamiento de ventas, control de proveedores, reportes analíticos y manejo de roles de usuario. La plataforma permite un control detallado del flujo de productos desde la compra hasta la venta final.',
-    image: 'https://portfoliowhalensoft.netlify.app/Images/superMarket.webp',
-    technologies: ['Spring Boot', 'JPA', 'Lombok', 'Hibernate', 'MongoDB', 'MySQL', 'React', 'Bootstrap'],
+    name: 'QuickBuy',
+    shortDescription: 'Demostración técnica de sistema pedidos con pago contraentrega para Colombia, permitiendo a usuarios comprar productos de Amazon pagando al recibir.',
+    fullDescription: 'QuickBuy es un proyecto demostrativo que simula un servicio de intermediación para compras en Amazon con pago contraentrega en Colombia. Los usuarios pueden pegar el link de cualquier producto Amazon, ver el precio real en COP (incluyendo envío internacional y comisión), y simular un pedido. El proyecto demuestra capacidades de scraping web, integración con APIs externas, cálculos financieros complejos y diseño de flujos de e-commerce. Nota importante: es un proyecto técnico personal que NO procesa transacciones reales.',
+    image: '/images/QuickBuy.webp', // Cambiar por tu imagen
+    technologies: ['React', 'JavaScript', 'Tailwind CSS', 'Springboot','JPA', 'JWT', 'Api Amazon'],
     features: [
-      'Gestión completa de inventarios con alertas de stock',
-      'Procesamiento de ventas y facturación',
-      'Control de proveedores y compras',
-      'Reportes analíticos y dashboard ejecutivo',
-      'Sistema de roles y permisos granular',
-      'Integración con sistemas de pago'
+      'Parser y validación de URLs de productos Amazon',
+      'Scraping de información de productos (título, precio, imagen)',
+      'Calculadora automática de costos (producto + envío + comisión)',
+      'Formulario de pedido con validaciones',
+      'Interfaz responsive optimizada para mobile',
+      'Flujo completo de checkout sin procesamiento real de pagos'
     ],
-    architecture: 'Arquitectura por capas con separación clara entre presentación, lógica de negocio y acceso a datos. API REST para comunicación frontend-backend.',
+    architecture: 'Aplicación frontend con React y JavaScript. Consumo de APIs REST externas para datos en tiempo real. Arquitectura basada en componentes reutilizables con separación clara entre lógica de presentación y lógica de negocio. Backend planeado con Spring Boot para gestión de pedidos y usuarios.',
     challenges: [
-      'Optimización de consultas complejas para reportes',
-      'Manejo de concurrencia en operaciones de inventario',
-      'Implementación de sistema de cache distribuido',
-      'Sincronización en tiempo real de datos críticos'
+      'Manejo de diferentes formatos de URLs y productos de Amazon',
+      'Cálculo preciso de costos considerando múltiples variables',
+      'Experiencia de usuario intuitiva para convertir precio USD a COP de forma transparente',
+      'Validación de direcciones colombianas y estimación de costos de envío local'
     ],
-    demoUrl: 'https://github.com/whastica/backendMarket',
-    repoUrl: 'https://github.com/whastica/backendMarket',
-    youtubeUrl: 'https://www.youtube.com/watch?v=taskmanager',
-    status: 'Próximamente'
+    demoUrl: 'https://github.com/whastica/EasyCod', // Cambiar por tu URL
+    repoUrl: 'https://github.com/whastica/EasyCod',
+    youtubeUrl: 'https://www.youtube.com',
+    status: 'Demo técnica previa'
   },
   {
     id: '3',
-    name: 'Sistema de Gestión Pizzería',
-    shortDescription: 'Solución integral para pizzerías que facilita la gestión de productos, inventario y órdenes, optimizando el control interno y la experiencia del cliente.',
-    fullDescription: 'Plataforma web especializada para pizzerías que centraliza todos los aspectos operativos del negocio. Permite gestionar el menú dinámicamente, procesar pedidos tanto presenciales como en línea, controlar inventario de ingredientes, generar reportes de ventas y administrar el personal. Incluye funcionalidades específicas para el negocio de comidas como gestión de combos, personalización de productos y sistema de delivery.',
-    image: 'https://portfoliowhalensoft.netlify.app/Images/pizzeria.webp',
-    technologies: ['Spring Boot', 'Spring Security', 'JPA', 'Lombok', 'Hibernate', 'MySQL', 'Thymeleaf', 'jQuery'],
+    name: 'GamerStore',
+    shortDescription: 'Plataforma e-commerce personalizada para tienda de productos gaming, desarrollada como proyecto freelance para migración desde CMS y reducción de costos operativos.',
+    fullDescription: 'GamerStore es un proyecto freelance real para una tienda de productos gaming en Colombia que operaba en una plataforma CMS. La solución custom permite control total de funcionalidades, ahorro significativo en costos operativos y personalización ilimitada. El sistema incluye catálogo completo de productos, carrito de compras, sistema de órdenes y preparación para integración con pasarelas de pago colombianas.',
+    image: '/images/GamerStore.webp',
+    technologies: ['Spring Boot', 'Spring Security', 'JPA', 'Hibernate', 'MySQL', 'React', 'TypeScript', 'Tailwind CSS', 'JWT'],
     features: [
-      'Gestión dinámica de menú y precios',
-      'Procesamiento de pedidos online y presenciales',
-      'Control de inventario de ingredientes',
-      'Sistema de personalización de productos',
-      'Módulo de delivery y seguimiento de pedidos',
-      'Reportes de ventas y análisis de productos más vendidos'
+      'Catálogo de productos con categorías y filtros avanzados',
+      'Sistema de carrito de compras con persistencia',
+      'Panel administrativo completo (productos, categorías, órdenes)',
+      'Sistema de órdenes con tracking de estados',
+      'Autenticación y autorización para administradores',
+      'Preparación para integración con Wompi/PayU (pasarelas Colombia)'
     ],
-    architecture: 'Arquitectura por capas con modelo REST y base de datos relacional MySQL. Implementación de Spring Security para manejo seguro de autenticación y autorización.',
+    architecture: 'Arquitectura MVC tradicional con API REST. Backend con una arquitectura hexagonal y basada en DDD utilizando Spring Boot con Spring Data JPA para persistencia en MySQL. Frontend React con TypeScript y Tailwind CSS. Sistema de autenticación JWT con roles diferenciados. Arquitectura preparada para escalabilidad con separación clara entre capa de presentación, lógica de negocio y acceso a datos.',
     challenges: [
-      'Optimización de queries para combinaciones de ingredientes',
-      'Sistema de cache para mejora de performance',
-      'Implementación de WebSockets para actualizaciones en tiempo real',
-      'Manejo eficiente de transacciones concurrentes'
+      'Optimización de carga de imágenes de productos (lazy loading, WebP, CDN)',
+      'Implementación de carrito persistente que funcione con y sin autenticación',
+      'Sistema de gestión de órdenes con múltiples estados y transiciones válidas',
+      'Balance entre features del CMS original y desarrollo en tiempo razonable',
+      'Cumplimiento de requisitos específicos del negocio (pre-órdenes, productos gaming)'
     ],
-    demoUrl: 'https://github.com/whastica/BackPizzeriaSecurity',
-    repoUrl: 'https://github.com/whastica/BackPizzeriaSecurity',
-    youtubeUrl: 'https://www.youtube.com/watch?v=taskmanager',
-    status: 'Próximamente'
-  },
-  {
-    id: '4',
-    name: 'E-Commerce Moderno',
-    shortDescription: 'Plataforma de comercio electrónico con React, Node.js y MongoDB, incluyendo carrito de compras, pagos y panel de administración.',
-    fullDescription: 'E-commerce completo desarrollado con tecnologías modernas que ofrece una experiencia de compra fluida y segura. Incluye catálogo de productos con filtros avanzados, carrito de compras persistente, integración con pasarelas de pago, sistema de reseñas y calificaciones, y un panel administrativo completo para gestión de productos, pedidos y usuarios.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'Stripe', 'JWT', 'Cloudinary'],
-    features: [
-      'Catálogo de productos con búsqueda y filtros avanzados',
-      'Carrito de compras con persistencia local y en base de datos',
-      'Integración completa con Stripe para pagos seguros',
-      'Sistema de reseñas y calificaciones de productos',
-      'Panel administrativo para gestión completa',
-      'Notificaciones por email y sistema de seguimiento de pedidos'
-    ],
-    architecture: 'Arquitectura de SPA (Single Page Application) con API REST. Implementación de Redux para manejo de estado global y JWT para autenticación segura.',
-    challenges: [
-      'Optimización de SEO en aplicación SPA',
-      'Implementación de carrito persistente offline',
-      'Integración segura con múltiples pasarelas de pago',
-      'Sistema de notificaciones en tiempo real'
-    ],
-    demoUrl: 'https://ecommerce-demo.netlify.app',
-    repoUrl: 'https://github.com/stiven-caicedo/ecommerce-app',
-    youtubeUrl: 'https://www.youtube.com/watch?v=demo',
-    status: 'Completo'
-  },
-  {
-    id: '5',
-    name: 'Task Management Dashboard',
-    shortDescription: 'Dashboard de gestión de tareas con funcionalidades avanzadas como drag & drop, colaboración en tiempo real y reportes de productividad.',
-    fullDescription: 'Aplicación web de gestión de proyectos y tareas diseñada para equipos de trabajo. Ofrece tableros Kanban interactivos, asignación de tareas, seguimiento de tiempo, colaboración en tiempo real, reportes de productividad y notificaciones inteligentes. La plataforma es ideal para equipos ágiles que necesitan una herramienta completa y visual para organizar su trabajo.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Socket.io', 'Chart.js', 'Material-UI'],
-    features: [
-      'Tableros Kanban con drag & drop avanzado',
-      'Colaboración en tiempo real con WebSockets',
-      'Sistema de comentarios y notificaciones',
-      'Reportes detallados de productividad y tiempos',
-      'Gestión de equipos y permisos granulares',
-      'Integración con calendarios y herramientas externas'
-    ],
-    architecture: 'Arquitectura de microservicios con comunicación en tiempo real. PostgreSQL para persistencia y Redis para cache y sesiones.',
-    challenges: [
-      'Sincronización de estado en tiempo real entre múltiples usuarios',
-      'Optimización de renderizado para tableros con muchas tareas',
-      'Implementación eficiente de sistema de permisos',
-      'Manejo de conflictos en edición colaborativa'
-    ],
-    demoUrl: 'https://taskmanager-demo.herokuapp.com',
-    repoUrl: 'https://github.com/stiven-caicedo/task-manager',
-    youtubeUrl: 'https://www.youtube.com/watch?v=taskmanager',
-    status: 'En desarrollo'
+    demoUrl: '', // Vacío por privacidad del cliente
+    repoUrl: '', // Repo privado
+    youtubeUrl: 'https://www.youtube.com/',
+    status: 'En pausa'
   }
 ];
-
 export const skills = [
   { name: 'React', level: 90, category: 'Frontend' },
   { name: 'TypeScript', level: 85, category: 'Frontend' },
@@ -152,11 +98,11 @@ export const skills = [
 export const personalInfo = {
   name: 'Stiven Caicedo',
   title: 'Desarrollador Web Full Stack',
-  email: 'stiven.caicedo@example.com',
+  email: 'whalensoft@gmail.com',
   linkedin: 'https://www.linkedin.com/in/whalen-stiven-caicedo/',
   github: 'https://github.com/whastica',
   location: 'Popayán, Colombia',
   education: 'Ingeniería de Sistemas',
-  experience: '3+ años',
-  bio: 'Desarrollador Web con experiencia en frontend y backend apasionado por crear aplicaciones web intuitivas y funcionales. He desarrollado varios proyectos independientes que demuestran mis habilidades técnicas y creatividad. Con una sólida formación en Ingeniería de Sistemas, estoy preparado para contribuir con soluciones innovadoras y centradas en el usuario.'
+  experience: '1.5 años',
+  bio: 'Soy Ingeniero de Sistemas Fullstack con experiencia en el desarrollo de aplicaciones web completas, desde interfaces modernas y responsivas hasta backends robustos y bien diseñados. Disfruto participar en todo el ciclo de desarrollo, comprender el problema, diseñar la solución y llevarla a producción con estándares profesionales. Actualmente enfoco mi crecimiento en consolidar un perfil sólido como ingeniero, fortaleciendo mis habilidades en desarrollo fullstack, arquitectura de software y construcción de productos digitales de calidad.'
 };
