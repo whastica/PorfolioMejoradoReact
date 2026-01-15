@@ -4,7 +4,7 @@ export const projects = [
     name: 'ZeroXP',
     shortDescription: 'Portal de empleos exclusivo para personas del sector tech sin experiencia laboral previa, donde empresas publican ofertas verificadas y candidatos aplican con un solo clic y de manera breve.',
     fullDescription: 'ZeroXP es una plataforma que resuelve el problema de los recién graduados en tecnología que aplican a ofertas "junior" pero que requieren años de experiencia. La plataforma conecta empresas que verdaderamente buscan talento sin experiencia con candidatos junior, ofreciendo un sistema transparente de aplicaciones con seguimiento en tiempo real. Las empresas reciben candidatos pre-filtrados y los candidatos obtienen feedback claro sobre el estado de sus aplicaciones.',
-    image: '/images/ZeroXP.webp', // Cambiar por tu imagen
+    image: '/images/ZeroXP.webp',
     technologies: ['Spring Boot', 'Spring Security', 'JPA', 'MySQL', 'React', 'JS', 'Tailwind CSS', 'JWT'],
     features: [
       'Autenticación JWT con roles diferenciados (Candidato y Empresa)',
@@ -21,17 +21,17 @@ export const projects = [
       'Optimización de queries para filtrado de ofertas',
       'Gestión de estados de aplicación con workflow claro (Pendiente → Revisado → Rechazado/Contratado)'
     ],
-    demoUrl: 'https://github.com/whastica/ZeroXP', // Cambiar por tu URL cuando esté desplegado
+    demoUrl: 'https://github.com/whastica/ZeroXP',
     repoUrl: 'https://github.com/whastica/ZeroXP',
     youtubeUrl: 'https://www.youtube.com',
-    status: 'En desarrollo' // Cambiar a 'Completo' cuando esté desplegado
+    status: 'En desarrollo'
   },
   {
     id: '2',
     name: 'QuickBuy',
     shortDescription: 'Demostración técnica de sistema pedidos con pago contraentrega para Colombia, permitiendo a usuarios comprar productos de Amazon pagando al recibir.',
     fullDescription: 'QuickBuy es un proyecto demostrativo que simula un servicio de intermediación para compras en Amazon con pago contraentrega en Colombia. Los usuarios pueden pegar el link de cualquier producto Amazon, ver el precio real en COP (incluyendo envío internacional y comisión), y simular un pedido. El proyecto demuestra capacidades de scraping web, integración con APIs externas, cálculos financieros complejos y diseño de flujos de e-commerce. Nota importante: es un proyecto técnico personal que NO procesa transacciones reales.',
-    image: '/images/QuickBuy.webp', // Cambiar por tu imagen
+    image: '/images/QuickBuy.webp',
     technologies: ['React', 'JavaScript', 'Tailwind CSS', 'Springboot','JPA', 'JWT', 'Api Amazon'],
     features: [
       'Parser y validación de URLs de productos Amazon',
@@ -48,10 +48,10 @@ export const projects = [
       'Experiencia de usuario intuitiva para convertir precio USD a COP de forma transparente',
       'Validación de direcciones colombianas y estimación de costos de envío local'
     ],
-    demoUrl: 'https://github.com/whastica/EasyCod', // Cambiar por tu URL
+    demoUrl: 'https://github.com/whastica/EasyCod',
     repoUrl: 'https://github.com/whastica/EasyCod',
     youtubeUrl: 'https://www.youtube.com',
-    status: 'Demo técnica previa'
+    status: 'Demo técnica'
   },
   {
     id: '3',
@@ -76,12 +76,13 @@ export const projects = [
       'Balance entre features del CMS original y desarrollo en tiempo razonable',
       'Cumplimiento de requisitos específicos del negocio (pre-órdenes, productos gaming)'
     ],
-    demoUrl: '', // Vacío por privacidad del cliente
-    repoUrl: '', // Repo privado
+    demoUrl: '',
+    repoUrl: '',
     youtubeUrl: 'https://www.youtube.com/',
     status: 'En pausa'
   }
 ];
+
 export const skills = [
   { name: 'React', level: 90, category: 'Frontend' },
   { name: 'TypeScript', level: 85, category: 'Frontend' },
