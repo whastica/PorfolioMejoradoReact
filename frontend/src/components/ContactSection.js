@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { personalInfo } from '../data/mockData';
-import {
-  MapPin,
-  Briefcase,
-  Code2,
-  MessageCircle,
-  ArrowRight,
+import { 
+  MapPin, 
+  Briefcase, 
+  Code2, 
+  MessageCircle, 
   ExternalLink,
   Copy,
-  CheckCircle2,
-  Send,
-  Mail,
-  Linkedin
+  CheckCircle2
 } from 'lucide-react';
 
 const ContactSection = () => {
@@ -36,7 +32,7 @@ const ContactSection = () => {
       action: `mailto:${personalInfo.email}`,
       buttonText: 'Enviar correo',
       color: 'from-red-500 to-orange-500',
-      borderColor: 'border-red-500/20 dark:border-red-500/30',
+      borderColor: 'border-red-500/20',
       hoverColor: 'hover:border-red-500/50',
       copyable: true
     },
@@ -48,7 +44,7 @@ const ContactSection = () => {
       action: personalInfo.linkedin,
       buttonText: 'Ver perfil',
       color: 'from-blue-600 to-blue-400',
-      borderColor: 'border-blue-500/20 dark:border-blue-500/30',
+      borderColor: 'border-blue-500/20',
       hoverColor: 'hover:border-blue-500/50',
       external: true
     },
@@ -60,7 +56,7 @@ const ContactSection = () => {
       action: personalInfo.github,
       buttonText: 'Ver GitHub',
       color: 'from-slate-600 to-slate-400',
-      borderColor: 'border-slate-500/20 dark:border-slate-500/30',
+      borderColor: 'border-slate-500/20',
       hoverColor: 'hover:border-slate-500/50',
       external: true
     }
@@ -77,7 +73,7 @@ const ContactSection = () => {
       icon: Briefcase,
       label: 'Disponibilidad',
       value: 'Disponible para proyectos',
-      color: 'text-violet-500'
+      color: 'text-primary'
     },
     {
       icon: Code2,
@@ -90,29 +86,26 @@ const ContactSection = () => {
   return (
     <section
       id="contacto"
-      className="min-h-screen py-20 px-4 sm:px-6 lg:px-8
-      bg-gradient-to-br from-slate-50 via-white to-slate-50
-      dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+      className="min-h-screen py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
-
         {/* Header */}
         <div className="text-center mb-16 space-y-6">
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-violet-600/10 border border-violet-500/30 rounded-full">
-            <MessageCircle size={20} className="text-violet-400" />
-            <span className="text-violet-600 dark:text-violet-300 font-medium text-sm">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
+            <MessageCircle size={20} className="text-primary" />
+            <span className="text-primary font-medium text-sm">
               Hablemos
             </span>
           </div>
-
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white">
+          
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
             ¡Conectemos y creemos algo{' '}
-            <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
               increíble!
             </span>
           </h2>
-
-          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Estoy disponible para nuevos proyectos, colaboraciones y oportunidades laborales.
             Si tienes una idea o proyecto en mente, me encantaría escucharte.
           </p>
@@ -123,21 +116,20 @@ const ContactSection = () => {
           {contactMethods.map((method, index) => (
             <div
               key={index}
-              className={`group relative bg-white dark:bg-slate-900/50
-              rounded-2xl p-6 border ${method.borderColor} ${method.hoverColor}
-              transition-all duration-300 hover:shadow-xl hover:scale-[1.02]`}
+              className={`group relative bg-card
+                rounded-2xl p-6 border ${method.borderColor} ${method.hoverColor}
+                transition-all duration-300 hover:shadow-xl hover:scale-[1.02]`}
             >
-              {/* Hover gradient */}
+              {/* Hover gradient effect */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${method.color}
-                opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}
+                  opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}
               />
-
+              
               <div className="relative space-y-4">
-
-                {/* Header without icon */}
+                {/* Header */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold tracking-widest text-slate-500 dark:text-slate-400">
+                  <span className="text-xs font-semibold tracking-widest text-muted-foreground">
                     {method.label}
                   </span>
                   <div className={`h-1 w-10 rounded-full bg-gradient-to-r ${method.color}`} />
@@ -145,48 +137,53 @@ const ContactSection = () => {
 
                 {/* Content */}
                 <div className="space-y-1 pt-2">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-2xl font-bold text-foreground">
                     {method.title}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                  <p className="text-sm text-muted-foreground">
                     {method.description}
                   </p>
-                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <p className="text-sm font-medium text-foreground/80">
                     {method.value}
                   </p>
                 </div>
 
-                {/* Actions */}
+                {/* Actions - Estilo Hero Section */}
                 <div className="flex gap-2 pt-2">
                   <a
                     href={method.action}
                     target={method.external ? '_blank' : undefined}
                     rel={method.external ? 'noopener noreferrer' : undefined}
-                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5
-                    bg-gradient-to-r ${method.color} text-white
-                    rounded-lg font-semibold text-sm
-                    transition-all duration-200 hover:shadow-lg hover:scale-[1.03]`}
+                    className="flex-1 flex items-center justify-center gap-2
+                      bg-primary hover:bg-primary/90
+                      text-primary-foreground
+                      px-4 py-2.5 rounded-lg font-medium
+                      transition-all duration-200
+                      hover:scale-105
+                      shadow-lg hover:shadow-xl
+                      text-sm"
                   >
                     {method.buttonText}
-                    {method.external ? (
-                      <ExternalLink size={14} />
-                    ) : (
-                      <ArrowRight size={14} />
-                    )}
+                    {method.external && <ExternalLink size={14} />}
                   </a>
 
                   {method.copyable && (
                     <button
                       onClick={handleCopyEmail}
-                      className={`p-2.5 border-2 ${method.borderColor} ${method.hoverColor}
-                      rounded-lg transition-all duration-200 hover:scale-105`}
+                      className="p-2.5 
+                        border-2 border-primary/50
+                        hover:border-primary
+                        hover:bg-primary/10
+                        rounded-lg 
+                        transition-all duration-200 
+                        hover:scale-105"
                       title="Copiar email"
                       aria-label="Copiar email al portapapeles"
                     >
                       {copiedEmail ? (
                         <CheckCircle2 size={18} className="text-green-500" />
                       ) : (
-                        <Copy size={18} className="text-slate-600 dark:text-slate-400" />
+                        <Copy size={18} className="text-muted-foreground" />
                       )}
                     </button>
                   )}
@@ -197,25 +194,27 @@ const ContactSection = () => {
         </div>
 
         {/* Quick Info */}
-        <div className="grid sm:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-3 gap-6">
           {quickInfo.map((info, index) => {
             const Icon = info.icon;
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-900/50 rounded-xl p-6
-                border border-slate-200 dark:border-slate-700/50
-                hover:border-violet-500/50 transition-all duration-300"
+                className="bg-card rounded-xl p-6
+                  border border-border
+                  hover:border-primary/50 
+                  transition-all duration-300
+                  hover:shadow-lg"
               >
                 <div className="flex items-center gap-4">
-                  <div className="p-3 bg-slate-100 dark:bg-slate-800/50 rounded-lg">
+                  <div className="p-3 bg-muted rounded-lg">
                     <Icon size={24} className={info.color} />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+                    <p className="text-sm text-muted-foreground mb-1">
                       {info.label}
                     </p>
-                    <p className="font-semibold text-slate-900 dark:text-white">
+                    <p className="font-semibold text-foreground">
                       {info.value}
                     </p>
                   </div>
@@ -225,55 +224,12 @@ const ContactSection = () => {
           })}
         </div>
 
-        {/* CTA */}
-        <div className="relative bg-gradient-to-br from-violet-600 to-purple-600 rounded-2xl p-8 md:p-12 overflow-hidden shadow-2xl">
-          <div className="relative text-center space-y-6">
-            <div className="inline-block p-3 bg-white/10 rounded-full">
-              <Send size={32} className="text-white" />
-            </div>
-
-            <h3 className="text-3xl md:text-4xl font-bold text-white">
-              ¿Listo para empezar tu proyecto?
-            </h3>
-
-            <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Ya sea que tengas un proyecto definido o solo una idea inicial,
-              estoy aquí para ayudarte a hacerla realidad.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="inline-flex items-center justify-center gap-2 bg-white
-                text-violet-600 px-8 py-4 rounded-xl font-semibold
-                transition-all duration-200 hover:scale-105 hover:shadow-xl"
-              >
-                <Mail size={20} />
-                Enviar un correo
-              </a>
-
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/10
-                border-2 border-white/50 text-white px-8 py-4 rounded-xl font-semibold
-                transition-all duration-200 hover:bg-white/20 hover:scale-105"
-              >
-                <Linkedin size={20} />
-                Conectar en LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Footer */}
-        <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
-          <p className="text-slate-600 dark:text-slate-400">
+        <div className="mt-16 pt-8 border-t border-border text-center">
+          <p className="text-muted-foreground">
             © {new Date().getFullYear()} {personalInfo.name}. Desarrollado con React y Tailwind CSS.
           </p>
         </div>
-
       </div>
     </section>
   );

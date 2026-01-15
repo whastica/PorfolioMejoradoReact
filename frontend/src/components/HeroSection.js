@@ -55,10 +55,6 @@ const HeroSection = () => {
           </span>
         </h1>
 
-        <h2 className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-6 font-medium">
-          Ingeniero en Sistemas Full Stack
-        </h2>
-
         {/* Description */}
         <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
           Ingeniero de Sistemas{' '}

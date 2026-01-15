@@ -21,7 +21,7 @@ code {
 @layer base {
   :root {
         /* Light theme - Violet Elegance with Cool Grays */
-        --background: 240 20% 98%;
+        --background: 240 20% 97%; /* 👈 CAMBIO: de 98% a 97% para #F5F5F9 */
         --foreground: 240 10% 15%;
         --card: 0 0% 100%;
         --card-foreground: 240 10% 15%;

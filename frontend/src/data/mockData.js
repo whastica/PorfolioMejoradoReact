@@ -105,5 +105,5 @@ export const personalInfo = {
   location: 'Popayán, Colombia',
   education: 'Ingeniería de Sistemas',
   experience: '1.5 años',
-  bio: 'Soy Ingeniero de Sistemas Fullstack con experiencia en el desarrollo de aplicaciones web completas, desde interfaces modernas y responsivas hasta backends robustos y bien diseñados. Disfruto participar en todo el ciclo de desarrollo, comprender el problema, diseñar la solución y llevarla a producción con estándares profesionales. Actualmente enfoco mi crecimiento en consolidar un perfil sólido como ingeniero, fortaleciendo mis habilidades en desarrollo fullstack, arquitectura de software y construcción de productos digitales de calidad.'
+  bio: 'Desarrollador web fullstack con experiencia en el desarrollo de aplicaciones web completas, desde interfaces modernas y responsivas hasta backends robustos y bien diseñados. Disfruto participar en todo el ciclo de desarrollo, comprender el problema, diseñar la solución y llevarla a producción con estándares profesionales. Actualmente enfoco mi crecimiento en consolidar un perfil sólido como ingeniero, fortaleciendo mis habilidades en desarrollo fullstack, arquitectura de software y construcción de productos digitales de calidad.'
 };
