@@ -97,7 +97,7 @@ export const skills = [
 ];
 
 export const personalInfo = {
-  name: 'Stiven Caicedo',
+  name: 'Whalen Caicedo',
   title: 'Desarrollador Web Full Stack',
   email: 'whalensoft@gmail.com',
   linkedin: 'https://www.linkedin.com/in/whalen-stiven-caicedo/',
