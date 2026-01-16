@@ -16,15 +16,21 @@ const HeroSection = () => {
   const scrollToProjects = () => {
     const element = document.getElementById('proyectos');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 64;
+      const offset = 20;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
-  // Calcular métricas desde mockData
   const totalProjects = projects.length;
   const totalTechnologies = [...new Set(projects.flatMap(p => p.technologies))].length;
 
-  // Tech stack principal con tecnologías reales de tus proyectos
   const techStack = [
     { name: 'Spring Boot', icon: Server, color: 'text-green-400' },
     { name: 'React', icon: Code2, color: 'text-cyan-400' },
@@ -34,7 +40,6 @@ const HeroSection = () => {
     { name: 'Tailwind CSS', icon: Sparkles, color: 'text-teal-400' }
   ];
 
-  // Métricas calculadas dinámicamente
   const metrics = [
     { label: 'Experiencia', value: personalInfo.experience, icon: Calendar },
     { label: 'Proyectos', value: `${totalProjects}`, icon: Code2 },
@@ -44,27 +49,27 @@ const HeroSection = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-20 pb-16"
+      className="relative min-h-screen flex items-center px-6 py-20 sm:px-8 lg:px-12"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center fade-in-section">
           
           {/* Left Side - Visual (60%) */}
           <div className="lg:col-span-3 space-y-8">
             
-            {/* Photo with decorative elements - CENTRADO */}
-            <div className="relative max-w-md mx-auto">
-              {/* Decorative blob background - ajustado al tamaño de imagen */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-[3rem] blur-2xl animate-pulse-slow" />
+            {/* Photo with decorative elements */}
+            <div className="relative max-w-md mx-auto slide-in-left">
+              {/* Decorative blob background */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-lg blur-2xl animate-pulse-slow" />
               
               {/* Main photo container */}
               <div className="relative group">
-                {/* Decorative corner accent */}
-                <div className="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-primary rounded-tl-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-primary rounded-br-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Decorative corner accents */}
+                <div className="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-primary rounded-tl-lg opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-primary rounded-br-lg opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                {/* Photo with aspect ratio 1120x928 */}
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500">
+                {/* Photo */}
+                <div className="relative overflow-hidden rounded-lg shadow-xl border-4 border-primary/20 group-hover:border-primary/40 transition-all duration-500 hover-scale">
                   <img
                     src="/images/whapage.jpg"
                     alt={personalInfo.name}
@@ -77,7 +82,7 @@ const HeroSection = () => {
                   
                   {/* Available badge */}
                   <div className="absolute bottom-6 left-6 right-6">
-                    <div className="flex items-center gap-3 bg-background/90 backdrop-blur-md border border-primary/30 rounded-xl px-4 py-3 shadow-lg">
+                    <div className="flex items-center gap-3 bg-background/90 backdrop-blur-md border border-primary/30 rounded-lg px-4 py-3 shadow-lg">
                       <div className="relative">
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-ping absolute" />
                         <div className="w-3 h-3 bg-green-500 rounded-full" />
@@ -91,14 +96,14 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Tech Stack Cards - 6 tecnologías - CENTRADO */}
+            {/* Tech Stack Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-md mx-auto">
               {techStack.map((tech, index) => {
                 const Icon = tech.icon;
                 return (
                   <div
                     key={tech.name}
-                    className="group bg-card hover:bg-card/80 border border-border rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+                    className="group bg-card hover:bg-card/80 border border-border rounded-md px-4 py-4 transition-all duration-300 hover-scale hover-glow cursor-pointer fade-in-section"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <Icon className={`${tech.color} mb-2 group-hover:scale-110 transition-transform duration-300`} size={24} />
@@ -108,14 +113,15 @@ const HeroSection = () => {
               })}
             </div>
 
-            {/* Quick Metrics - Datos reales del mockData - CENTRADO */}
+            {/* Quick Metrics */}
             <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
-              {metrics.map((metric) => {
+              {metrics.map((metric, index) => {
                 const Icon = metric.icon;
                 return (
                   <div
                     key={metric.label}
-                    className="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/50 transition-all duration-300"
+                    className="bg-card border border-border rounded-md px-4 py-4 text-center hover:border-primary/50 transition-all duration-300 hover-glow fade-in-section"
+                    style={{ animationDelay: `${(index + 6) * 100}ms` }}
                   >
                     <Icon className="text-primary mx-auto mb-2" size={20} />
                     <p className="text-2xl font-bold text-foreground mb-1">{metric.value}</p>
@@ -135,11 +141,11 @@ const HeroSection = () => {
               <span className="text-sm font-medium text-primary">{personalInfo.location}</span>
             </div>
 
-            {/* Main heading - SIN underline */}
+            {/* Main heading */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 ¡Hola! Soy{' '}
-                <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+                <span className="gradient-text">
                   Whalen Caicedo
                 </span>
               </h1>
@@ -156,15 +162,14 @@ const HeroSection = () => {
               Combino frontend y backend para construir soluciones sólidas y alineadas con objetivos de negocio.
             </p>
 
-            {/* CTAs - BOTONES DEL MISMO TAMAÑO */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden"
+                className="group relative flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover-scale shadow-lg hover:shadow-xl overflow-hidden btn-ripple"
               >
-                {/* Button shine effect */}
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                 <Briefcase size={20} />
                 <span>Disponible para Trabajar</span>
@@ -172,7 +177,7 @@ const HeroSection = () => {
               
               <button
                 onClick={scrollToProjects}
-                className="flex items-center justify-center gap-2 border-2 border-primary/50 hover:border-primary text-primary hover:bg-primary/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                className="flex items-center justify-center gap-2 border-2 border-primary/50 hover:border-primary text-primary hover:bg-primary/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover-scale"
               >
                 <Code2 size={20} />
                 <span>Ver Proyectos</span>
@@ -181,7 +186,7 @@ const HeroSection = () => {
 
             {/* Small info */}
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Sparkles size={16} className="text-primary" />
+              <Sparkles size={16} className="text-primary pulse-soft" />
               <span>Actualmente trabajando en proyectos con Spring Boot y React</span>
             </div>
           </div>
@@ -196,22 +201,6 @@ const HeroSection = () => {
           onClick={scrollToProjects}
         />
       </div>
-
-      {/* Custom animations */}
-      <style>{`
-        @keyframes pulse-slow {
-          0%, 100% {
-            opacity: 0.3;
-          }
-          50% {
-            opacity: 0.5;
-          }
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 };

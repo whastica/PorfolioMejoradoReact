@@ -9,6 +9,7 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 code {
@@ -16,18 +17,16 @@ code {
         monospace;
 }
 
-
-
 @layer base {
   :root {
         /* Light theme - Violet Elegance with Cool Grays */
-        --background: 240 20% 97%; /* 👈 CAMBIO: de 98% a 97% para #F5F5F9 */
+        --background: 240 20% 97%;
         --foreground: 240 10% 15%;
         --card: 0 0% 100%;
         --card-foreground: 240 10% 15%;
         --popover: 0 0% 100%;
         --popover-foreground: 240 10% 15%;
-        --primary: 258 90% 66%; /* Elegant Violet - Sophisticated */
+        --primary: 258 90% 66%;
         --primary-foreground: 0 0% 100%;
         --secondary: 240 15% 95%;
         --secondary-foreground: 240 10% 20%;
@@ -50,7 +49,7 @@ code {
         --card-foreground: 240 20% 96%;
         --popover: 240 40% 8%;
         --popover-foreground: 240 20% 96%;
-        --primary: 258 90% 70%; /* Brighter purple for dark mode */
+        --primary: 258 90% 70%;
         --primary-foreground: 240 40% 8%;
         --secondary: 240 30% 14%;
         --secondary-foreground: 240 20% 96%;
@@ -66,8 +65,6 @@ code {
     }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -77,12 +74,16 @@ code {
     }
 }
 
-/* Custom animations and effects */
+/* ===================================
+   MICRO-INTERACCIONES Y ANIMACIONES
+   =================================== */
 @layer utilities {
+  /* Glass effect mejorado */
   .glass-effect {
     @apply bg-background/80 backdrop-blur-md border border-border/50;
   }
   
+  /* Card hover con micro-interacción */
   .card-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -92,10 +93,12 @@ code {
     box-shadow: 0 20px 40px -12px rgba(139, 92, 246, 0.3);
   }
   
+  /* Gradient text */
   .gradient-text {
     @apply bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent;
   }
   
+  /* Float animation */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -109,6 +112,7 @@ code {
     }
   }
   
+  /* Modal overlay */
   .modal-overlay {
     backdrop-filter: blur(8px);
     background: rgba(0, 0, 0, 0.6);
@@ -118,20 +122,141 @@ code {
     @apply glass-effect shadow-2xl;
   }
   
-  /* Violet-specific utilities */
-  .btn-primary-hover {
-    transition: all 0.2s ease-in-out;
+  /* ===================================
+     NUEVAS MICRO-INTERACCIONES
+     =================================== */
+  
+  /* Ripple effect para botones */
+  .btn-ripple {
+    position: relative;
+    overflow: hidden;
   }
   
-  .btn-primary-hover:hover {
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+  .btn-ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
   }
   
-  .gradient-violet {
-    background: linear-gradient(135deg, hsl(258 90% 66%) 0%, hsl(280 80% 60%) 100%);
+  .btn-ripple:active::before {
+    width: 300px;
+    height: 300px;
   }
   
-  .glow-violet {
+  /* Hover glow effect */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-glow:hover {
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  }
+  
+  /* Subtle scale en hover */
+  .hover-scale {
+    transition: transform 0.2s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Fade in animation para secciones */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Slide in desde la izquierda */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Shimmer effect para loading estados */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+    background-size: 200% 100%;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  /* Pulse suave para elementos importantes */
+  .pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  /* Border animation en hover */
+  .border-animate {
+    position: relative;
+  }
+  
+  .border-animate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, hsl(var(--primary)), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .border-animate:hover::before {
+    opacity: 1;
+  }
+  
+  /* Smooth transitions para todo */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

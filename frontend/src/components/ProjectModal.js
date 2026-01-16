@@ -22,7 +22,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      setActiveTab('overview'); // Reset tab cuando se abre
+      setActiveTab('overview');
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -100,12 +100,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
       onClick={handleBackdropClick}
     >
-      <div className="relative bg-card rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden border border-border shadow-2xl">
+      <div className="relative bg-card rounded-lg max-w-6xl w-full max-h-[90vh] overflow-hidden border border-border shadow-2xl">
         
-        {/* Sticky Header con Close y CTAs */}
+        {/* Sticky Header */}
         <div className="sticky top-0 z-20 bg-card/95 backdrop-blur-md border-b border-border px-6 py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Title y Status */}
@@ -113,7 +113,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               <h2 className="text-2xl font-bold text-foreground truncate">
                 {project.name}
               </h2>
-              <div className={`${status.bg} backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm flex-shrink-0`}>
+              <div className={`${status.bg} backdrop-blur-md px-3 py-2 rounded-sm flex items-center gap-2 shadow-sm flex-shrink-0`}>
                 <StatusIcon size={14} className="text-white" />
                 <span className="text-white text-xs font-semibold hidden sm:inline">
                   {status.label}
@@ -121,12 +121,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* CTAs Principales - SIEMPRE VISIBLES */}
+            {/* CTAs Principales */}
             <div className="flex items-center gap-2">
               {project.demoUrl && (
                 <button
                   onClick={() => handleLinkClick(project.demoUrl)}
-                  className="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-lg"
+                  className="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-md font-medium transition-all duration-200 hover-scale shadow-md btn-ripple"
                 >
                   <ExternalLink size={16} />
                   <span className="hidden lg:inline">Demo</span>
@@ -136,7 +136,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {project.repoUrl && (
                 <button
                   onClick={() => handleLinkClick(project.repoUrl)}
-                  className="hidden sm:flex items-center gap-2 border-2 border-primary/50 hover:border-primary hover:bg-primary/10 text-primary px-4 py-2 rounded-lg font-medium transition-all duration-200"
+                  className="hidden sm:flex items-center gap-2 border-2 border-primary/50 hover:border-primary hover:bg-primary/10 text-primary px-4 py-2 rounded-md font-medium transition-all duration-200"
                 >
                   <Github size={16} />
                   <span className="hidden lg:inline">Código</span>
@@ -146,7 +146,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {project.youtubeUrl && (
                 <button
                   onClick={() => handleLinkClick(project.youtubeUrl)}
-                  className="hidden sm:flex items-center gap-2 border-2 border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-red-500 px-4 py-2 rounded-lg font-medium transition-all duration-200"
+                  className="hidden sm:flex items-center gap-2 border-2 border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-red-500 px-4 py-2 rounded-md font-medium transition-all duration-200"
                 >
                   <Youtube size={16} />
                 </button>
@@ -154,7 +154,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-muted rounded-lg transition-colors group"
+                className="p-2 hover:bg-muted rounded-md transition-colors group"
                 aria-label="Cerrar modal"
               >
                 <X size={20} className="text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -164,12 +164,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
         </div>
 
         {/* Main Content - 2 COLUMNAS */}
-        <div className="grid lg:grid-cols-2 gap-6 p-6 max-h-[calc(90vh-80px)] overflow-y-auto custom-scrollbar">
+        <div className="grid lg:grid-cols-2 gap-6 px-6 py-6 max-h-[calc(90vh-80px)] overflow-y-auto custom-scrollbar">
           
-          {/* LEFT COLUMN - Imagen + Descripción + CTAs Mobile */}
+          {/* LEFT COLUMN */}
           <div className="space-y-6">
             {/* Image */}
-            <div className="relative overflow-hidden rounded-xl h-64 lg:h-80">
+            <div className="relative overflow-hidden rounded-md h-64 lg:h-80">
               <img 
                 src={project.image} 
                 alt={project.name}
@@ -198,7 +198,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 {project.technologies.map((tech) => (
                   <span 
                     key={tech}
-                    className="px-3 py-1.5 bg-primary/10 text-primary text-xs font-medium rounded-lg border border-primary/20 hover:bg-primary/20 transition-colors duration-200"
+                    className="px-3 py-2 bg-primary/10 text-primary text-xs font-medium rounded-sm border border-primary/20 hover:bg-primary/20 transition-colors duration-200"
                   >
                     {tech}
                   </span>
@@ -206,12 +206,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* CTAs Mobile - Duplicados */}
+            {/* CTAs Mobile */}
             <div className="flex sm:hidden flex-col gap-3 pt-4 border-t border-border">
               {project.demoUrl && (
                 <button
                   onClick={() => handleLinkClick(project.demoUrl)}
-                  className="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200"
+                  className="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-md font-medium transition-all duration-200 btn-ripple"
                 >
                   <ExternalLink size={18} />
                   <span>Ver Demo</span>
@@ -221,7 +221,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {project.repoUrl && (
                 <button
                   onClick={() => handleLinkClick(project.repoUrl)}
-                  className="flex items-center justify-center gap-2 border-2 border-primary/50 hover:border-primary hover:bg-primary/10 text-primary px-6 py-3 rounded-lg font-medium transition-all duration-200"
+                  className="flex items-center justify-center gap-2 border-2 border-primary/50 hover:border-primary hover:bg-primary/10 text-primary px-6 py-3 rounded-md font-medium transition-all duration-200"
                 >
                   <Github size={18} />
                   <span>Ver Código</span>
@@ -231,7 +231,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {project.youtubeUrl && (
                 <button
                   onClick={() => handleLinkClick(project.youtubeUrl)}
-                  className="flex items-center justify-center gap-2 border-2 border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-red-500 px-6 py-3 rounded-lg font-medium transition-all duration-200"
+                  className="flex items-center justify-center gap-2 border-2 border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-red-500 px-6 py-3 rounded-md font-medium transition-all duration-200"
                 >
                   <Youtube size={18} />
                   <span>Ver Video</span>
@@ -240,7 +240,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Tabs con contenido */}
+          {/* RIGHT COLUMN - Tabs */}
           <div className="space-y-4">
             {/* Tabs Navigation */}
             <div className="flex gap-2 border-b border-border">
@@ -250,7 +250,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center gap-2 px-4 py-2.5 font-medium text-sm transition-all duration-200 border-b-2 ${
+                    className={`flex items-center gap-2 px-4 py-3 font-medium text-sm transition-all duration-200 border-b-2 ${
                       activeTab === tab.id
                         ? 'border-primary text-primary'
                         : 'border-transparent text-muted-foreground hover:text-foreground'
@@ -268,8 +268,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               
               {/* TAB 1: Overview */}
               {activeTab === 'overview' && (
-                <div className="space-y-6 animate-in fade-in duration-300">
-                  {/* Full Description */}
+                <div className="space-y-6 animate-fade-in">
                   <div>
                     <h4 className="text-base font-semibold mb-2 text-foreground flex items-center gap-2">
                       <Code size={16} className="text-primary" />
@@ -280,7 +279,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                     </p>
                   </div>
 
-                  {/* Features con iconos */}
                   <div>
                     <h4 className="text-base font-semibold mb-3 text-foreground flex items-center gap-2">
                       <CheckCircle2 size={16} className="text-primary" />
@@ -290,7 +288,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                       {project.features.map((feature, index) => (
                         <div 
                           key={index} 
-                          className="flex items-start gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 border border-border/50"
+                          className="flex items-start gap-3 px-3 py-3 rounded-sm bg-muted/50 hover:bg-muted transition-colors duration-200 border border-border/50"
                         >
                           <CheckCircle2 size={16} className="text-primary mt-0.5 flex-shrink-0" />
                           <span className="text-foreground text-sm leading-relaxed">{feature}</span>
@@ -303,8 +301,8 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
               {/* TAB 2: Arquitectura */}
               {activeTab === 'architecture' && (
-                <div className="space-y-4 animate-in fade-in duration-300">
-                  <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                <div className="space-y-4 animate-fade-in">
+                  <div className="px-4 py-4 bg-muted/50 rounded-md border border-border">
                     <h4 className="text-base font-semibold mb-3 text-foreground flex items-center gap-2">
                       <Server size={16} className="text-primary" />
                       Arquitectura técnica
@@ -318,7 +316,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
               {/* TAB 3: Retos */}
               {activeTab === 'challenges' && project.challenges && project.challenges.length > 0 && (
-                <div className="space-y-3 animate-in fade-in duration-300">
+                <div className="space-y-3 animate-fade-in">
                   <h4 className="text-base font-semibold text-foreground flex items-center gap-2">
                     <Zap size={16} className="text-primary" />
                     Retos técnicos superados
@@ -326,7 +324,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   {project.challenges.map((challenge, index) => (
                     <div 
                       key={index} 
-                      className="flex items-start gap-3 p-3 rounded-lg bg-muted/50 border border-border"
+                      className="flex items-start gap-3 px-3 py-3 rounded-sm bg-muted/50 border border-border"
                     >
                       <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">
                         {index + 1}
