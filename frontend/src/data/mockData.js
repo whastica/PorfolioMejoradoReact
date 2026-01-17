@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: '1',
-    name: 'ZeroXP',
+    name: 'ZeroXP - Plataforma de empleo para talento sin experiencia',
     shortDescription: 'Portal de empleos exclusivo para personas del sector tech sin experiencia laboral previa, donde empresas publican ofertas verificadas y candidatos aplican con un solo clic y de manera breve.',
     fullDescription: 'ZeroXP es una plataforma que resuelve el problema de los recién graduados en tecnología que aplican a ofertas "junior" pero que requieren años de experiencia. La plataforma conecta empresas que verdaderamente buscan talento sin experiencia con candidatos junior, ofreciendo un sistema transparente de aplicaciones con seguimiento en tiempo real. Las empresas reciben candidatos pre-filtrados y los candidatos obtienen feedback claro sobre el estado de sus aplicaciones.',
     image: '/images/ZeroXP.webp',
@@ -28,7 +28,7 @@ export const projects = [
   },
   {
     id: '2',
-    name: 'QuickBuy',
+    name: 'QuickBuy - Plataforma de pagos contraentrega',
     shortDescription: 'Demostración técnica de sistema pedidos con pago contraentrega para Colombia, permitiendo a usuarios comprar productos de Amazon pagando al recibir.',
     fullDescription: 'QuickBuy es un proyecto demostrativo que simula un servicio de intermediación para compras en Amazon con pago contraentrega en Colombia. Los usuarios pueden pegar el link de cualquier producto Amazon, ver el precio real en COP (incluyendo envío internacional y comisión), y simular un pedido. El proyecto demuestra capacidades de scraping web, integración con APIs externas, cálculos financieros complejos y diseño de flujos de e-commerce. Nota importante: es un proyecto técnico personal que NO procesa transacciones reales.',
     image: '/images/QuickBuy.webp',
@@ -55,8 +55,8 @@ export const projects = [
   },
   {
     id: '3',
-    name: 'GamerStore',
-    shortDescription: 'Plataforma e-commerce personalizada para tienda de productos gaming, desarrollada como proyecto freelance para migración desde CMS y reducción de costos operativos.',
+    name: 'E-commerce Freelance',
+    shortDescription: 'Proyecto real desarrollado como trabajo freelance. Plataforma e-commerce personalizada para tienda de productos gaming, desarrollada como proyecto freelance para migración desde CMS y reducción de costos operativos. Actualmente en pausa por decisiones del cliente',
     fullDescription: 'GamerStore es un proyecto freelance real para una tienda de productos gaming en Colombia que operaba en una plataforma CMS. La solución custom permite control total de funcionalidades, ahorro significativo en costos operativos y personalización ilimitada. El sistema incluye catálogo completo de productos, carrito de compras, sistema de órdenes y preparación para integración con pasarelas de pago colombianas.',
     image: '/images/GamerStore.webp',
     technologies: ['Spring Boot', 'Spring Security', 'JPA', 'Hibernate', 'MySQL', 'React', 'TypeScript', 'Tailwind CSS', 'JWT'],
